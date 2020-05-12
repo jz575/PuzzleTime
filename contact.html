@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!-- DEVELOPER: Jeffrey Zhang, IS117-004, Spring 2020 -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href ="images/favicon.png">
+  <link href="css/inner.css" rel="stylesheet">
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <title>Puzzle Time</title>
+</head>
+<header>
+  <div class ="container-fluid">
+    <div class="row">
+      <nav class="navbar navbar-expand-md justify-content-start bg-dark navbar-dark col-12">
+        <!-- Brand -->
+        <a class="navbar-brand" href="home.html">Puzzle Time</a>
+        <!-- Responsive Button for the smaller menu -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Links -->
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="picture.html">Picture</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="number.html">Number</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="shop.html">Shop</a>
+            </li>
+            <!-- Dropdown -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbardrop"
+                 data-toggle="dropdown">
+                Other
+              </a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="about.html">About</a>
+                <a class="dropdown-item" href="contact.html">Contact Us</a>
+                <a class="dropdown-item" href="hints.html">Hints</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+</head>
+<body>
+<h1>Contact Me</h1>
+<h2>Give feedback on the website</h2>
+<div class="container">
+  <form>
+    <label for="name">First Name</label>
+    <input type="text" id="name" name="firstname" placeholder="username - can be anything">
+    <p>Rate from 1-5</p>
+    <label for="rating">Country</label>
+    <select id="rating" name="rating">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </select>
+
+    <label for="message">Message</label>
+    <textarea id="message" name="me" placeholder="any comments" style="height:50%"></textarea>
+<br>
+    <input type="submit" value="Submit">
+  </form>
+</div>
+</body>
+<div class="footer">
+  <p>&copy; Jeffrey Zhang <div>2020</div></p>
+</div>
+</html>

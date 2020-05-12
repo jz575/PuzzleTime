@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<!-- DEVELOPER: Jeffrey Zhang, IS117-004, Spring 2020 -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href ="images/favicon.png">
+  <link href="css/inner.css" rel="stylesheet">
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <title>Puzzle Time</title>
+</head>
+<header>
+  <div class ="container-fluid">
+    <div class="row">
+      <nav class="navbar navbar-expand-md justify-content-start bg-dark navbar-dark col-12">
+        <!-- Brand -->
+        <a class="navbar-brand" href="home.html">Puzzle Time</a>
+        <!-- Responsive Button for the smaller menu -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Links -->
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="picture.html">Picture</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="number.html">Number</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="shop.html">Shop</a>
+            </li>
+            <!-- Dropdown -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbardrop"
+                 data-toggle="dropdown">
+                Other
+              </a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="about.html">About</a>
+                <a class="dropdown-item" href="contact.html">Contact Us</a>
+                <a class="dropdown-item" href="hints.html">Hints</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+</head>
+<script>
+  function setCookie(cname, value, expiration) {
+    var date = new Date();
+    date.setTime(date.getTime() + (expiration * 24 * 60 * 60 * 1000));
+    var xDate = "expires="+date.toUTCString();
+    document.cookie = cname + "=" + value + ";" + xDate+ ";path=/";
+  }
+  function getCookie(cname) {
+    var name = cname+"=";
+    <!--creates a list of each section of the cookie-->
+    var list = document.cookie.split(';');
+    for (var i = 0; i< list.length;i++) {
+      <!--goes through the list to find the section where the name is-->
+      <!--this means the cookie does not necessarily have to the name be the first or second part-->
+      var current = list[i];
+      <!--removes whitespace-->
+      while(current.charAt(0)==' '){
+        current=current.substring(1);
+      }
+      <!--returns the stored name in the cookie document-->
+      if (current.indexOf(name)==0) {
+        return current.substring(name.length,current.length);
+      }
+      <!--returns nothing if name isnt found-->
+    }
+    return "";
+  }
+  function checkCookie(cname) {
+    var user = getCookie(cname);
+    <!--if there is already a user cookie stored-->
+    if (user != ""){
+      var nothing ="";
+    }
+    else {
+      <!--asks for a name to store in the cookie-->
+      user =cname+"key";
+      <!--checks if the input was valid-->
+      if (user != "" && user != null) {
+        <!--sets a cookie with the name of the part being stored so you know what to reference when trying to get the stored value-->
+        <!--e.g. getCookie() in this example will scan the text of the cookie for the username section and return the value-->
+        <!--stores the user inputted value-->
+        <!--sets the expiration of the cookie to a year-->
+        setCookie(cname, user, 7);
+      }
+    }
+  }
+  function soldOutMessage() {
+    alert("This item is sold out");
+  }
+</script>
+<body>
+<h1>Hints</h1>
+<ul>
+  <li><h2>Picture Puzzle</h2><p class="hint">Think of using any of those items to open a door</p></li>
+  <li><h2>Number Puzzle</h2><p class="hint">Think outside of the box</li>
+  <li><h2>Shop</h2><p class="hint">**</p></li>
+</ul>
+<p class="cheat" onclick="checkCookie('pic'); checkCookie('num'); checkCookie('shop')">Or press here to cheat</p>
+</body>
+<div class="footer">
+  <p>&copy; Jeffrey Zhang <div>2020</div></p>
+</div>
+</html>
